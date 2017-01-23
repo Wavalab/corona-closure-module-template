@@ -2,47 +2,61 @@
 -- Closure Module
 --
 
-local M = {}
--- include require statements here
+-- require statements here
+local C = {}
+
+
 
 --
 -- Constructor
 --
 
-local new = function()
+local C.new = function()
 
-  local self = {} -- Or set to a extendable constructor
-
+  local self = {} -- Or set to a extendable constructor (even, a display object!)
+  
+  
+  
   --
   -- Private variables
   --
 
-  local str = "Test"
-
+  local foo = "foobar"
+  
+  
+  
   --
   -- Private functions
   --
-
+  
   local privFn = function()
-    print( str .. " 1" )
+    print("I am private!")
   end
 
-  local publicFn = function()
-    print( str .. " 2" )
+  
+  
+  --
+  -- Public functions
+  --
+
+  self.publicFn = function()
+    print("I am not private!")
   end
 
+  
+  
   --
   -- Expose closure API
   --
 
-  self.test1 = publicFn
   return self
 
 end
 
+
+
 --
--- Expose closure via module
+-- Expose closure
 --
 
-M.new = new
-return M
+return C
