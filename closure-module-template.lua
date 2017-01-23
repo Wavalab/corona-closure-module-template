@@ -1,7 +1,7 @@
 local M = { new = function()
 
   -- Construct and initialize instance
-  local ClosureInstance = {}
+  local ClosureInstance = {} -- feel free to rename to something more elegant
 
   -- To extend a display object
   -- local ClosureInstance = display.newCircle(0, 0, 0)
