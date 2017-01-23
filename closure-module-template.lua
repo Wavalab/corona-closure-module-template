@@ -3,7 +3,7 @@
 --
 
 -- require statements here
-local C = {}
+local M = {}
 
 
 
@@ -11,7 +11,7 @@ local C = {}
 -- Constructor
 --
 
-local C.new = function()
+M.new = function()
 
   local self = {} -- Or set to a extendable constructor (even, a display object!)
   
@@ -59,4 +59,4 @@ end
 -- Expose closure
 --
 
-return C
+return M
