@@ -6,4 +6,4 @@ Metatable classes are very cool, but run into trouble when trying to extend disp
 
 The functional approach to managing object creation is pure and does not limit display objects at all. However, it's call syntax is clunky as the `self` reference must be supplied as an argument. Also, this approach lacks a private state which is important when dealing with several instances.
 
-That brings us to closures! Closures preserve all of the display objects functionality, while allowing you to extend, override, and build as necessary. The syntax is very similar to the Metatable method but this approach allows us to enclose each object with public and private properies!
+That brings us to closures! Closures preserve all of the display objects functionality, while allowing you to extend, override, and build as necessary. The syntax is very similar to the Metatable method but this approach allows us to enclose each object with public and private properties!
