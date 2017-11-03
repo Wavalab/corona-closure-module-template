@@ -14,9 +14,7 @@ local random = math.random
 -- Short description of Instance goes here
 --
 
-local Instance = {}
-
-function Instance.new(params)
+return function(params)
 
   --
   -- Parameters (read only constants from user)
@@ -25,13 +23,6 @@ function Instance.new(params)
   local params = {}
   params.x = params.x or 0
   params.y = params.y or 0
-
-  --
-  -- Parameter assertions
-  --
-
-  assert(params.x >= 0, "x must be non-negative")
-  assert(params.y >= 0, "y must be non-negative")
 
   --
   -- State (mutable stuffs)
@@ -74,12 +65,6 @@ function Instance.new(params)
   end
 
   --
-  -- Public properties (if necessary)
-  --
-
-  self.name = "instance"
-
-  --
   -- Public methods
   --
 
@@ -97,5 +82,3 @@ function Instance.new(params)
 
   return self
 end
-
-return Instance
