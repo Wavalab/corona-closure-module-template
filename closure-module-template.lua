@@ -1,60 +1,28 @@
---
 -- Dependencies
---
-
 local physics = require("physics")
 
---
--- Function localization
---
-
+-- Localize functions
 local random = math.random
 
---
--- Short description of Instance goes here
---
-
+-- Insert short description of Instance
 return function(params)
+  local self, spec, state, super = {}, {}, {}, {}
 
-  --
-  -- Parameters (read only constants from user)
-  --
+  -- Read-only
+  spec.x = params.x or 0
+  spec.y = params.y or 0
+  spec.pi = math.pi
 
-  local params = {}
-  params.x = params.x or 0
-  params.y = params.y or 0
-
-  --
-  -- State (mutable stuffs)
-  --
-
-  local state = {}
+  -- Mutable
   state.isActive = false
 
-  --
-  -- Options (read only constants)
-  --
-
-  local opts = {}
-  opts.pi = math.pi
-
-  --
   -- Construct instance
-  --
+  self = display.newCircle(spec.x, spec.y, spec.pi)
 
-  local self = display.newCircle(params.x, params.y, opts.pi)
+  -- Access super methods
+  super.someMethod = self.someMethod
 
-  --
-  -- Accessing super methods
-  --
-
-  local super = {}
-  super.setColor = self.someMethod
-
-  --
   -- Private functions
-  --
-
   local function doStuffPrivately()
     state.isActive = true
     print(self.x, self.y)
@@ -64,20 +32,14 @@ return function(params)
     print(event)
   end
 
-  --
   -- Public methods
-  --
-
   function self.doStuff()
     doStuffPrivately()
-    super.setColor()
-    return opts.pi
+    super.someMethod()
+    return spec.pi
   end
 
-  --
   -- Event binding
-  --
-
   Runtime:addEventListener("touch", handleEvent)
 
   return self
