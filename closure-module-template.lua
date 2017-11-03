@@ -83,7 +83,7 @@ function Instance.new(params)
   -- Public methods
   --
 
-  function self:doStuff()
+  function self.doStuff()
     doStuffPrivately()
     super.setColor()
     return opts.pi
