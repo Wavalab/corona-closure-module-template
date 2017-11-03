@@ -76,6 +76,12 @@ function Instance.new()
   end
 
   --
+  -- Public properties (if necessary)
+  --
+
+  self.name = "instance"
+
+  --
   -- Public methods
   --
 
@@ -90,12 +96,6 @@ function Instance.new()
   --
 
   Runtime:addEventListener("touch", handleEvent)
-
-  --
-  -- Public properties
-  --
-
-  self.name = "instance"
 
   return self
 end
