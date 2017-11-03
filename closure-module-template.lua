@@ -18,8 +18,6 @@ local Instance = {}
 
 function Instance.new(params)
 
-  local self = {}
-
   --
   -- Parameters (read only constants from user)
   --
@@ -53,7 +51,7 @@ function Instance.new(params)
   -- Construct instance
   --
 
-  self = display.newCircle(params.x, params.y, opts.pi)
+  local self = display.newCircle(params.x, params.y, opts.pi)
 
   --
   -- Accessing super methods
