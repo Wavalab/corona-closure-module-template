@@ -16,7 +16,7 @@ local random = math.random
 
 local Instance = {}
 
-function Instance.new()
+function Instance.new(params)
 
   local self = {}
 
