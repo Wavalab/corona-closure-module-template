@@ -11,7 +11,7 @@ local physics = require("physics")
 local random = math.random
 
 --
--- Description for Instance
+-- Short description of Instance goes here
 --
 
 local Instance = {}
