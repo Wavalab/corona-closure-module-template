@@ -46,6 +46,10 @@ function Instance.new(params)
   local function handleEvent(event)
     print(event)
   end
+  
+  -- Event binding
+  
+  Runtime:addEventListener("touch", handleEvent)
 
   -- Public methods
   
@@ -54,10 +58,6 @@ function Instance.new(params)
     super.someMethod()
     return spec.pi
   end
-
-  -- Event binding
-  
-  Runtime:addEventListener("touch", handleEvent)
 
   return self
 end
