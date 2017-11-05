@@ -1,28 +1,43 @@
--- Dependencies
-local physics = require("physics")
+--[[
 
--- Localize functions
+  Instance details
+
+--]]
+
+local physics = require("physics")
+-- and, other dependencies...
+
+-- Pure functions
+
 local random = math.random
 
--- Insert short description of Instance
-return function(params)
+-- Closure
+
+local Instance = {}
+
+function Instance.new(params)
   local self, spec, state, super = {}, {}, {}, {}
 
   -- Read-only
+  
   spec.x = params.x or 0
   spec.y = params.y or 0
   spec.pi = math.pi
 
   -- Mutable
+  
   state.isActive = false
 
-  -- Construct instance
+  -- Constructor
+  
   self = display.newCircle(spec.x, spec.y, spec.pi)
 
-  -- Access super methods
+  -- Super methods
+  
   super.someMethod = self.someMethod
 
   -- Private functions
+
   local function doStuffPrivately()
     state.isActive = true
     print(self.x, self.y)
@@ -33,6 +48,7 @@ return function(params)
   end
 
   -- Public methods
+  
   function self.doStuff()
     doStuffPrivately()
     super.someMethod()
@@ -40,6 +56,7 @@ return function(params)
   end
 
   -- Event binding
+  
   Runtime:addEventListener("touch", handleEvent)
 
   return self
